@@ -1,0 +1,19 @@
+
+  <div class="container">
+    <h1>Toutou List</h1>
+    <input #newItem placeholder="add an item" type="text" >
+    <button class="btn-save" (click)="AddItem(newItem.value)">SAVE</button>
+    <div [style.background-color]="in.checked ? '#2BEB18':'' " class="item-todo" *ngFor="let item of Items; let i=index">
+
+      <div class="content"><input #in type="checkbox" (change)="!in['checked']" class="chekbox" [(ngModel)]="item.done"></div>
+      <div class="content"><h3  id="item">{{item.description}}</h3></div>
+      <div class="content">
+        <button class="button_delete" (click)="Delete(i)">DELETE</button>
+        <button class="button_edit" (click)="Edit(i)">EDIT</button>
+      </div>
+
+
+    </div>
+  </div>
+
+
