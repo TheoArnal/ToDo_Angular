@@ -1,0 +1,14 @@
+<div class="content">
+  <div [style.background-color]="in.checked ? '#2BEB18':'' " class="item-todo">
+    <div class="content">
+      <input #in type="checkbox" (change)="!in['checked']" class="chekbox" [(ngModel)]="item.done">
+
+      <div class="content"><h3  id="item">{{item.description}}</h3></div>
+      <div class="content">
+        <button (click)="deleteItem()">Delete</button>
+        <button (click)="editItem()">Edit</button>
+
+      </div>
+    </div>
+  </div>
+</div>
